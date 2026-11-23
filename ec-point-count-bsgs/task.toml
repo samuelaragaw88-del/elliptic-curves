@@ -1,0 +1,32 @@
+schema_version = "1.4"
+
+[task]
+name = "samuel-aragaw/ec-point-count-bsgs"
+
+[metadata]
+author_name = "Samuel Aragaw"
+author_email = "samuelaragaw88@gmail.com"
+category = "mathematics"
+tags = ["number-theory", "elliptic-curves", "baby-step-giant-step", "computational-algebra"]
+difficulty = "hard"
+difficulty_explanation = """
+Counting points one x at a time needs about p = 10^13 steps, far beyond the
+10-second limit. A correct solution must use Hasse's theorem to bound the
+answer to an interval of width 4*sqrt(p), find a point's order with
+baby-step giant-step in about p^(1/4) steps, and use further points or the
+quadratic twist (Mestre's method) to make the answer unique. No computer
+algebra system that already implements point counting is installed.
+"""
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1800.0
+
+[environment]
+network_mode = "no-network"
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+storage_mb = 4096
